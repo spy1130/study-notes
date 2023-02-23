@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <script src="static/js/jquery/jquery-1.6.min.js?d4n" type="text/javascript">jQuery.noConflict();</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>三体社区_三体官方社区·三体  </title>
+
+<meta name="keywords" content="三体,三体社区,三体论坛,三体小说,三体电影,三体游戏" />
+<meta name="description" content="三体社区，泛科幻大本营。三体社区是首个三体粉、科幻爱好者交流沟通的官方平台。社区分为红岸基地（社区精选）、科学边界（综合内容），四维空间（粉丝杂谈）三个版块，我们在这里聊三体，说科幻，谈电影。登录三体社区请点击www.3body.com，关注微信订阅号threebody-home。 " />
+<meta name="generator" content="Discuz! X3.2" />
+<meta name="author" content="Discuz! Team and Comsenz UI Team" />
+<meta name="copyright" content="2001-2013 Comsenz Inc." />
+<meta name="MSSmartTagsPreventParsing" content="True" />
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<base href="http://www.3body.com/" /><link rel="stylesheet" type="text/css" href="data/cache/style_1_common.css?d4n" /><link rel="stylesheet" type="text/css" href="data/cache/style_1_forum_index.css?d4n" /><script type="text/javascript">var STYLEID = '1', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'd4n', charset = 'utf-8', discuz_uid = '0', cookiepre = 'mZlj_2132_', cookiedomain = '', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'newthread|tradeorder|debate|nav|usergroups|task', creditnotice = '2|水滴|,3|兑换券|', defaultstyle = '', REPORTURL = 'aHR0cDovL3d3dy4zYm9keS5jb20v', SITEURL = 'http://www.3body.com/', JSPATH = 'static/js/', CSSPATH = 'data/cache/style_', DYNAMICURL = '';</script>
+<script type="text/javascript" src="static/js/common.js?d4n"></script>
+<meta name="application-name" content="三体社区" />
+<meta name="msapplication-tooltip" content="三体社区" />
+<meta name="msapplication-task" content="name=论坛;action-uri=http://www.3body.com/forum.php;icon-uri=http://www.3body.com/static/image/common/bbs.ico" />
+<link rel="archives" title="三体社区" href="http://www.3body.com/archiver/" />
+<link rel="stylesheet" id="css_widthauto" type="text/css" href='data/cache/style_1_widthauto.css?d4n' />
+<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
+<script src="static/js/forum.js?d4n" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/js/jquery.fancybox-1.3.4.css" media="screen" />
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9a8b8c3683a906c9b884b6ca5c4379d0' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script src="http://tajs.qq.com/stats?sId=39485032" type="text/javascript" charset="UTF-8"></script>
+</head>
+
+<body>
+<!--顶部条  开始-->
+  <div class="topStripWrap">  
+  		<div class="logoZu"><a href="http://www.3body.com"  class="btn_logo" >logo</a>
+ <h1  class="so_dabiao"><a href="http://www.3body.com">三体社区</a></h1><span class="so_solgon">泛科幻大本营</span></div>
+       
+   <!--  <p class='regZu'><a href='javascript:show_Register();' class='btn_reg'>注册</a><a href='javascript:show_Login();' class='btn_login'>登录</a></p> -->
+   <p class='regZu'><a href='member.php?mod=register' class='btn_reg'>注册</a><a href="member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href);return false;" class="btn_login">登录</a><a href='javascript:show_Login();' class='btn_login' style="display:none;">游族</a></p>
+        </div>
+<!--顶部条 结束-->
+  <script type="text/javascript">
+  	/*jQ = jQuery.noConflict();
+  	jQ(function(){
+  		jQ('.btn_login').click(function(){
+  			var url = encodeURIComponent('http://www.3body.com/member.php?mod=logging&action=login');
+  			window.open('http://qapassport.youzu.com/oauth/login?response_type=code&app_id=123456&state=54c74bf26fa9f1422347250&redirect_uri='+url,'loginWin','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=780, height=650,top=200,left=500');
+  		
+  	}) 
+  })		*/
+  </script>
+<!--中部活动区块-->
+<div class="hp_bigbox">
+    <div class="containBox hp_box">
+                                                                                                                                                                            	<div class="round_lg round_1">
+<i></i>
+<a href='forum-2-1.html' class="info" id="0">
+<h2><strong>红岸基地</strong></h2>
+<p>(三体影视)</p>
+<span><em class="icon_article"></em>119</span>
+<span><em class="icon_topic"></em>4197</span>
+</a>
+</div>
+                                                                                                                                                                         	<div class="round_lg round_2">
+<i></i>
+<a href='forum-42-1.html' class="info" id="0">
+<h2><strong>科学边界</strong></h2>
+<p>(泛科幻内容)</p>
+<span><em class="icon_article"></em>3092</span>
+<span><em class="icon_topic"></em><span title="15999">1万</span></span>
+</a>
+</div>
+                                                                                                                                                                         	<div class="round_lg round_3">
+<i></i>
+<a href='forum-43-1.html' class="info" id="0">
+<h2><strong>四维空间</strong></h2>
+<p>(粉丝杂谈)</p>
+<span><em class="icon_article"></em>2071</span>
+<span><em class="icon_topic"></em><span title="14879">1万</span></span>
+</a>
+</div>
+     <div class="round_tip round_4">
+<div class="box">
+ <p class="info floatL">
+  	<strong><a href="http://www.3body.com/thread-10831-1-1.html" title="查看详情">小说太长懒得看，来这儿三分钟看懂《三体...</a></strong>
+  	    	<strong><a href="http://www.3body.com/thread-43125-1-1.html" title="查看详情">《三体》游戏制作已展开，填写问卷有礼拿！</a></strong>
+  	    	<strong><a href="http://www.3body.com/thread-40260-1-1.html" title="查看详情">【社区通知】关于内容发放</a></strong>
+  	    	<strong><a href="http://www.3body.com/thread-32543-1-1.html" title="查看详情">年终盛典——2015年Science杂志亮点研究成果</a></strong>
+  	                                                                                                                                                                                                                                                                                                                                          </p>
+
+                <p class="pic floatR">
+             <img src="data/attachment/forum/201508/28/193946n4d7dd944d4g1m9d.png" style="width:auto;height:100%;" alt="科幻综合"></p>
+        <em></em>
+</div>
+</div>
+<div class="round_tip round_5">
+<div class="box">
+<p class="info floatL">
+  	<strong><a href="http://www.3body.com/thread-10258-1-1.html" title="查看详情">设计师陪你聊聊《三体》第二款先导海报</a></strong>
+  	    	<strong><a href="http://www.3body.com/thread-4438-1-1.html" title="查看详情">【问题征集】第四日——杜淳：“询问”魏成</a></strong>
+  	    	<strong><a href="http://www.3body.com/thread-4400-1-1.html" title="查看详情">【问题征集】第三日——唐嫣：“刺探”申玉菲</a></strong>
+  	    	<strong><a href="http://www.3body.com/thread-4366-1-1.html" title="查看详情">【问题征集】冯绍峰：“调查”汪淼</a></strong>
+  	                                                                </p>
+            <p class="pic floatR">
+             <img src="data/attachment/forum/201508/25/105825p8h0wakd4fhawiis.jpg" style="width:auto;height:100%;" alt="社区精选"></p>
+        	<em></em>
+</div>
+</div>
+<div class="round_tip round_6">
+<div class="box">
+<p class="info floatL">
+  	<strong><a href="http://www.3body.com/thread-720-1-1.html" title="查看详情">三体水滴攻击地球［一］〔CG渲染图〕</a></strong>
+  	    	<strong><a href="http://www.3body.com/thread-13645-1-1.html" title="查看详情">你是怎么知道三体这部科幻小说的？</a></strong>
+  	    	<strong><a href="http://www.3body.com/thread-6107-1-1.html" title="查看详情">选出你最喜欢的：地球往事三部曲人物和名言录</a></strong>
+  	    	<strong><a href="http://www.3body.com/thread-6069-1-1.html" title="查看详情">V装具相关辅助功能的运用与开发</a></strong>
+  	                                                                                                              </p>
+            <p class="pic floatR">
+             <img src="data/attachment/forum/201501/21/224936wjyzelbaax1csxmj.png" style="width:auto;height:100%;" alt="粉丝杂谈"></p>
+        	<em></em>
+</div>
+</div>
+<!--首页发帖统计-->
+		  
+<!--div class="hp_time" data-endtime="2015/01/21 10:00:00">
+<p class="day">00</p>
+<p class="hour">00</p>
+<p class="min">00</p>
+<p class="sec">00</p>
+</div> -->
+<script type="text/javascript">
+var jQ = jQuery.noConflict();
+// jQ(window).load(function(){
+jQ (document).ready(function(){
+if(jQ(".hp_time").size() > 0){
+jQ(".hp_time").each(function(index, element) {
+var date = new Date(jQ(this).data("endtime")),
+InterValObj = window.setInterval(SetRemainTime, 1000),
+_day = jQ(".day", this),
+_hour = jQ(".hour", this),
+_min = jQ(".min", this),
+_sec = jQ(".sec", this);
+
+function SetRemainTime() {
+var today = new Date();
+var SysSecond = Date.parse(date) - Date.parse(today);
+SysSecond = SysSecond/1000; 
+if(SysSecond <=0){
+window.clearInterval(InterValObj);
+_day.html("00");
+_hour.html("00");
+_min.html("00");
+_sec.html("00");
+return false;
+}
+
+_sec.html(time(Math.floor(SysSecond % 60)));
+_min.html(time(Math.floor((SysSecond / 60) % 60)));
+_hour.html(time(Math.floor((SysSecond / 3600) % 24)));
+_day.html(time(Math.floor((SysSecond / 3600) / 24)));
+
+function time(info){
+return info.toString().length >= 2 ? info :('0'+info);
+}
+}
+});
+};
+
+  //首页右侧弹微信图
+  /*
+    jQ('.pWeixinGroup').hover(function(){
+      jQ(this).find('.pWeixin_big_box').show();
+      jQ(this).find('.pWX_small').hide();
+    },function(){
+      jQ(this).find('.pWeixin_big_box').hide();
+      jQ(this).find('.pWX_small').show();
+    });
+  */
+ 	 /*
+        //隐藏显示邀请码浮动框
+        jQ (".btn_yao_close").live('click',function(){
+            jQ (".pop_yaoceWrap").hide();
+        });
+
+        jQ (".containBox,.btn_logo").click(function(e){
+                	 jQ (".pop_yaoceWrap").show();
+               });*/
+});
+
+ 	jQ(function(){
+        if(jQ(window).width() >= 1510){
+            jQ("#win-flat").removeClass("flatHold_small").addClass("flatHold_big");
+        }else{
+            jQ("#win-flat").removeClass("flatHold_big").addClass("flatHold_small");
+        }
+    if(jQ(".YindaoGroup").size() > 0){
+if(jQ(window).width() <= 1000){
+jQ(".AutoSideBar").removeClass("yd-fixed");
+}
+}
+    }).scroll(function(){
+        if(jQ(".YindaoGroup").size() > 0){
+           if(jQ(window).scrollTop() >= jQ(".AutoSideBar").offset().top && jQ(window).width()>=1000){
+                jQ(".AutoSideBar").addClass("yd-fixed");
+            }else{
+                jQ(".AutoSideBar").removeClass("yd-fixed");
+            }
+        };
+    });
+</script>
+    </div>
+  </div>
+<!--中部活动区块-->
+
+
+<!--首页右侧弹微信图固定 区Start-->
+<div class="pWeixinGroup">
+  <p class="pWX_small" style="display:none"><img src="images/santi/p_weixin_s.jpg" width="69" height="69" alt="三体"></p>
+  <div class="pWeixin_big_box" style="display:block">
+    <p class="pWX_t1">扫码关注官方微信更有好礼</p>
+    <p class="pWX_big"><img src="images/santi/p_weixin_b.jpg" width="154" height="154" alt="三体官方二维码"></p>
+    <p class="pWX_t2">官方qq群：143832760</p>
+  </div>
+</div>
+<!--首页右侧弹微信图固定 区End-->
+
+<!--弹窗 开始-->
+<!-- <div class="pop_yaoceWrap" style="width:480px;"> -->
+<div class="pop_yaoceWrap" style="width:480px;display:none;">
+    <div class="popYaoWrap" style="width:480px;">
+        <div class="py_title"> <span class="Ins_xing">注意</span><a href="javascript:;" class="btn_yao_close">close</a> </div>
+        <div class="py_nrs">
+            <p class="py_txt" style="text-align:center;"> 三体社区1月21日上午10点正式开放，敬请期待！</p>
+<!--  -->
+            <p class="py_btn"><a href="member.php?mod=logging&amp;action=login">登录</a> <a href="member.php?mod=register">注册</a></p>
+        </div>
+    </div>
+</div>
+<!--弹窗 结束-->
+
+<!--尾部开始-->	</div>
+
+
+<script type="text/javascript">
+_attachEvent(window, 'load', getForbiddenFormula, document);
+function getForbiddenFormula() {
+var toGetForbiddenFormulaFIds = function () {
+ajaxget('plugin.php?id=cloudsearch&formhash=a47a415f');
+};
+var a = document.body.getElementsByTagName('a');
+for(var i = 0;i < a.length;i++){
+if(a[i].getAttribute('sc')) {
+a[i].setAttribute('mid', hash(a[i].href));
+a[i].onmousedown = function() {toGetForbiddenFormulaFIds();};
+}
+}
+var btn = document.body.getElementsByTagName('button');
+for(var i = 0;i < btn.length;i++){
+if(btn[i].getAttribute('sc')) {
+btn[i].setAttribute('mid', hash(btn[i].id));
+btn[i].onmousedown = function() {toGetForbiddenFormulaFIds();};
+}
+}
+}
+</script>
+
+    <!--尾部开始-->
+    <div class="FootWrap">
+        <div class="FootGroup">
+            <p class="logoYingyeZu">
+            	<a href="http://www.youzu.com"  class="btn_Youzulogo" title="游族网络" target="_blank">游族网络</a>
+            	<a href="http://pictures.yoozoo.com/"  class="btn_Yingyelogo" title="游族影业" target="_blank">游族影业</a></p>
+            <ul class="ftls fs_1">
+                <li><a href="http://www.yoozoo.com/product " title="游族产品" target="_blank" rel="nofollow">游族产品</a></li>
+                <li><a href="http://www.youzu.com/" title="游族平台" target="_blank">游族平台</a></li>
+                <li><a href="http://www.youzu.com/mgame" title="游族无线" target="_blank">游族无线</a></li>
+            </ul>
+            <ul class="ftls fs_2" style="display: none;">
+                <li><a href="#">商务合作</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">网站地图 </a></li>
+                <li><a href="#">VI下载</a></li>
+            </ul>
+            <div class="guanzhuUs">
+                <p class="gz_biaoti"><span class="gzzi">关注我们</span><a href="http://weibo.com/u/5310108124" target="_blank" class="btn_follow_sina" title="新浪微博" rel="nofollow">新浪微博</a><a href="javascript:;"  title="微信"   class="btn_follow_weixin" rel="nofollow">微信 <i class="yxweixinpic">3</i></a></p>
+                <p class="gz_copyright">COPYRIGHT © 2010 – 2014 youzu . ALL RIGHTS RESERVED.</p>
+                <p style="display:none;">&nbsp;&nbsp;<span id="tcss"></span><script type="text/javascript" src="http://tcss.qq.com/ping.js?v=1VERHASH" charset="utf-8"></script><script type="text/javascript" reload="1">pgvMain({"discuzParams":{"r2":"39485032","ui":0,"rt":"forum","md":"index","pn":1,"qq":"000"},"extraParams":""});</script></p>
+                <p class="gz_beianhao"><a href="http://beian.miit.gov.cn/" alt="沪ICP备19005476号-1" target="_blank" rel="nofollow">沪ICP备19005476号-1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/sitemap.xml" alt="网站地图" target="_blank">网站地图</a></p>
+                <p class="gz_beianhao">Powered by Discuz! X3.2@2001-2013, Comsenz Inc 版权信息</p>
+            </div>
+        </div>
+    </div>
+    <!--尾部结束-->
+
+<!--底部友链 开始-->
+<div class="FriendLsWrap">
+  <div class="FriendLsGroup">
+    <p class="Flsme"><a href="javascript:;" class="fb_on">更多友情链接</a> </p>
+    <p class="FlsZu">
+    	<a target="_blank" href=" http://bbs.youtaidu.com/">钛度社区</a>
+    	<a target="_blank" href="http://www.3gsc.com.cn/">3G小说网</a> 
+    	<a target="_blank" href="http://www.motie.com/male">磨铁中文网</a>
+    	<a target="_blank" href="http://chuangshi.qq.com/">创世中文网</a>
+    	<a target="_blank" href="http://yuedu.163.com/yc">网易原创</a> 
+    	<a target="_blank" href="http://www.qidian.com/Default.aspx">起点中文网</a>
+    	<a target="_blank" href="http://www.xxsy.net/">潇湘书院</a>
+    	<a target="_blank" href="http://www.hongxiu.com/">红袖添香</a>
+    	<a target="_blank" href="http://fy.readnovel.com/">小说阅读网</a></br>
+    	<a target="_blank" href="http://www.sfw.com.cn/">科幻世界</a>
+    	<a target="_blank" href="http://www.shuhai.com/">书海小说网</a>
+    	<a target="_blank" href="http://www.zongheng.com/">纵横中文网</a> 
+    	<a target="_blank" href="http://www.wcsfa.com/">科幻星云网</a>	
+     </p> 
+  </div>
+</div>
+<!--底部友链 结束--> 
+<script src="home.php?mod=misc&ac=sendmail&rand=1579838511" type="text/javascript"></script>
+<div id="scrolltop">
+<span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo('0','0')" class="scrolltopa" ><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
+			<div id="discuz_tips" style="display:none;"></div>
+			<script type="text/javascript">
+				var tipsinfo = '39485032|X3.2|0.6||0||0|7|1579838511|fd18ada0f054067ce8c86a26df68bb2d|2';
+			</script>
+			<script src="http://discuz.gtimg.cn/cloud/scripts/discuz_tips.js?v=1" type="text/javascript" charset="UTF-8"></script><!--弹窗 开始-->
+<div class="popShaerWrap" style="width:520px;">
+    <div class="popWrap" style="width:480px;">
+        <div class="popGroup"> <a href="javascript:;" class="btn_close">close</a>
+            <div  id="focus" class="shapicZu" style="width:440px; height:315px; " >
+                <ul class="sharepicShow" >
+                                                                                <li><img src="images/share/pic_c.jpg" width="440" height="315"></li>
+                                        <li><img src="images/share/pic_d.jpg" width="440" height="315"></li>
+                                        <li><img src="images/share/pic_f.jpg" width="440" height="315"></li>
+                                        <li><img src="images/share/pic_h.jpg" width="440" height="315"></li>
+                                        <li><img src="images/share/pic_i.jpg" width="440" height="315"></li>
+                                    </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="shaZu">
+                <p class="share_bts">给岁月以文明，而不是给文明以岁月。</p>
+                <p class="share_date">2020/1/24</p>
+                <p class="share_btn"> <a href="javascript:;" class="btn_fxpy">分享给朋友</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗 结束-->
+<script type="text/javascript">
+/*去掉每10min强制刷新页面*/
+/*  jQ = jQuery.noConflict();
+  jQ(function(){
+      if(jQ('#new_message').hasClass('ms_off')){
+        setInterval("my_refresh()",1000*60*10);
+      } 
+  })
+  function my_refresh(){
+    window.location.reload();
+  }*/
+  /*function ask_newpm(){
+    if(jQ('#new_message').hasClass('ms_off')){
+        jQ.post('home.php',{request:1},function(data){
+          if(data > 0) {
+            jQ('#new_message').removeClass('ms_off').addClass('ms_on');
+          }
+        },'json');
+        window.setTimeout(my_refresh,2000);
+     }
+  }*/
+</script>
+<script src="static/js/3body/simplefoucs.js" type="text/javascript"></script>
+<script>
+    var jQ = jQuery.noConflict();
+    jQ(document).ready(function(){
+        jQ(window).trigger("resize");
+
+        jQ(".wd_zan").click(function(){
+            jQ(".wd_zan i").addClass("bigheart");
+
+            var like_value = jQ('#like_num').text();
+            var sum_like = like_value*1 + 1;
+            var url = 'home.php?mod=spacecp&ac=pm&op=share';
+            jQ.ajax({
+                url:url,
+                type:'POST',
+                data:'',
+                success: function(data){
+                    console.log(data.status);
+                    if('success' == data){
+                        jQ('#like_num').text(sum_like);
+                        setTimeout("removeBigHeart()", 2000);
+                    }
+                }
+            });
+        }); //点击赞红心动
+
+        //点击弹出分享
+        jQ(".icon_share").click(function(){
+        	jQ(".share_bts").text(jQ('#scroll_begin').text());
+            jQ(".popShaerWrap").show( );
+        });
+
+        jQ(".popShaerWrap .btn_close").click(function(){
+            jQ(".popShaerWrap").hide( );
+        });
+
+ //底部友链
+  jQ(".fb_on").click(function(){	  
+  jQ(this).toggleClass("fb_off");
+  jQ(".FlsZu").toggleClass("FlallZu");   
+  });
+    });
+
+    function removeBigHeart(){
+        jQ(".wd_zan i").removeClass("bigheart");
+    }
+
+    jQ('.btn_follow_weixin').hover(function(){
+        jQ(this).find('.yxweixinpic').show();
+    },function(){	
+        jQ(this).find('.yxweixinpic').hide();
+    });
+</script>
+</body>
+</html>
+<!--尾部结束-->
+</body>
+</html>
+
+
+

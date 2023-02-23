@@ -1,0 +1,245 @@
+1 第一天 （qt 的基础）
+	什么是qt
+	hello程序，空窗口
+	添加按钮（对象树、父子关系）
+	按钮的功能（信号和槽）
+	信号和槽的拓展
+2 第二天 各个控件
+	最简单的记事本界面（菜单栏、状态栏、工具栏）
+	使用ui和资源文件
+	创建对话框
+	各个控件以及布局
+	
+3 第三天 高级
+	捕捉鼠标（qt的事件，鼠标事件）
+	定时器事件
+	绘图事件、绘图设备
+	文件读写
+4 第四天、第五天
+	案例——翻金币的游戏
+	
+	
+	
+	
+5 第一个hello程序，qt的项目结构
+	创建项目的时候 QWidget、QMainWindow、QDialog
+		QWidget 是所有能看到的窗口或者控件的父类，QMainWindow、QDialog 都继承自它
+	
+	
+	main函数
+		QApplication 就是Qt里边每个应用程序有且仅有一个的应用程序对象
+		QApplication::exec()   程序的生命循环、消息循环 ，当作以下形式
+		
+			while(1)
+		 * {
+		 *      if(点击x按钮)
+		 *          break;
+		 *      if(点击了最小化按钮)
+		 *          最小化动作;
+		 *      ...
+		 * }
+		 
+		 
+	Widget头文件：
+		Q_OBJECT //宏，引入qt信号和槽的一个宏
+		
+		HelloWidget(QWidget *parent = 0);
+		//parent窗口指针，父窗口对象的指针
+		//如果parent为0或者NULL，表示当前窗口对象是个顶层窗口
+		//顶层窗口就是在任务栏可以找到的窗口
+		
+		
+	.pro文件
+		QT       += core gui    # 引入qt的模块 
+		greaterThan(QT_MAJOR_VERSION, 4): QT += widgets   #如果qt版本号大于4，就引入widgets模块
+		
+		#指定目标，生成可执行程序的名字
+		TARGET = 01_hello
+		
+		#模板，生成什么文件，app表示应用程序exe,lib 就是生成库
+		TEMPLATE = app
+		
+		
+	Qt里边绝大部分的类都是继承自QObject ,QObject是一个顶层类
+	
+	
+	
+6 父子关系
+	默认情况下按钮没有认干爹的情况下，是个顶层窗口
+	想要按钮显示在窗口上，就要跟窗口构造父子关系
+	1 setParent 
+	2 构造函数传参
+	
+	
+7 Qt坐标系
+	是以父窗口的左上角为0,0
+	以向右的方向为x的正方向
+	以向下的方向为y的正方向
+	顶层窗口就是以屏幕左上角为0,0
+	
+	
+8 QT常用API函数
+	move 移动窗口到父窗口某个坐标
+	resize 重新设置窗口的大小
+	setFixedSize 设置窗口的固定大小
+	setWindowTitle 设置窗口标题
+	setGeometry 同时设置窗口位置和大小，相当于move和resize的结合体
+	
+	
+9 对象树
+	概念：各个窗口对象通过建立父子关系构造的一个关系树
+	内存管理：
+		父对象释放的时候会自动释放各个子对象（使用children列表）
+	
+	以后基本都是用new的方式来创建窗口对象
+	注意点：
+		1 父对象能够被释放
+		2 父对象、子对象，直接或者间接继承自QObject
+	
+10 信号和槽
+	按钮
+	被点击
+	窗口
+	关闭
+	
+	建立四者的关系(按钮 被点击 窗口 关闭)
+	
+	
+    信号发送者
+    信号
+    信号接收者
+    槽：信号的处理动作
+    默认情况下，它们四者没有关系，通过connect 建立四者的关系
+	
+    conncet(信号发送者，信号，信号接收者，槽)
+	
+	
+	信号和槽，本质都是函数
+	
+	connect里边4个参数都是指针
+    connect(btn,&QPushButton::clicked,this,&Widget::hide);
+
+	
+	
+    使用connect的时候保留&符号
+    1 提高代码可读性
+    2 自动提示
+	
+11 自定义信号和槽
+	自定义信号
+		1 函数声明在类头文件的signals 域下面
+		2 void 类型的函数，没有返回值
+		3 可以有参数，也可以重载
+		4 只有声明，没有实现定义
+		5 触发信号 emit obj->sign(参数...)
+	
+	自定义槽
+		1 函数声明在类头文件的public/private/protected slots域下面（qt4以前的版本）
+			qt5 就可以声明在类的任何位置，还可以是静态成员函数、全局函数、lambda表达式
+		2 void 类型的函数，没有返回值
+		3 可以有参数，也可以重载
+		4 不仅有声明，还得有实现
+		
+	场景：下课了，老师说他饿了，学生就请吃饭
+		信号发送者：老师
+		信号：老师饿了
+		信号接收者：学生
+		槽：请吃饭
+	创多少个类：Teacher Student
+	信号： hungry 1个 Teacher
+	槽：treat 1个 Student 
+	
+	
+	
+	带参数的自定义信号和槽，就声明函数的时候就带上参数就行
+	老师说他饿了，说要吃黄焖鸡，学生就请吃黄焖鸡
+	
+	调用带参数的信号函数 emit pTeacher->hungry("黄焖鸡");
+	
+	参数二义性问题：
+		1 使用函数指针赋值，让编译器自动挑选符合类型的函数
+		2 使用static_cast 强制转换 ，让编译器自动挑选符合类型的函数
+	
+	
+	
+	
+12 信号和槽的拓展
+	1 一个信号可以连接多个槽
+		一个信号建立了多个connect
+		那么当信号发射的时候，槽函数的调用顺序：随机
+	2 一个槽可以连接多个信号
+	
+	3 信号可以连接信号
+		connect(第一个信号发送者，第一个信号，第二个信号发送者，第二个信号)
+		
+	4 信号可以断开连接,disconnect
+		connect 参数怎么填，disconnect就怎么填
+		
+	5 信号和槽的参数关系，必须同时满足以下两点
+		1 信号和槽函数的参数类型必须对应
+		2 信号和槽函数的参数个数不需要一致，信号函数参数个数>=槽函数参数个数
+			hungry(QString)    ->       treat()     	ok
+			hungry(QString)    ->       treat(int)     	编译出错
+			hungry(QString,int)    ->   treat(int)     	编译出错
+		
+	
+13 Qt4 的信号和槽
+	
+	使用两个宏 SIGNAL   、 SLOT
+	connect使用不一样，信号和槽函数声明差不多
+	
+	connect(信号发送者,SIGNAL(函数原型) ,信号接收者,SLOT(函数原型))
+	
+	好处：
+		没有重载二义性的问题
+	坏处：
+		写错了，编译期间不报错
+		
+	SIGNAL和SLOT宏的原理，就是将后边的参数转成字符串      类似 #define toStr(arg)  #arg     -> "arg"
+		
+	推荐：以后都用qt5的	
+	
+
+
+14 QDebug
+	qdeubg输出QString默认会转义
+
+    //解决方法两个
+    //1 将QString转成 char *
+    //qDebug()<<"Student treat teacher with "<<what.toUtf8().data();
+
+    //2 使用qDebug().noquote()
+    qDebug().noquote()<<"Student treat teacher with "<<what;
+
+	
+	
+15 lambda表达式
+	[capture](parameters) opt ->retType
+	{
+	……;
+	}
+	
+	[capture] 捕获外部局部变量的列表，值传递，直接填变量名 ，引用传递就使用&变量名
+		使用= 值传递捕获所有局部变量
+		使用& 应用传递捕获所有局部变量
+		有特殊的捕获方式的变量在后边另外指定
+		
+	如果是值传递捕获进来的变量默认是const ， 需要修改的话要使用 mutable选项
+	返回值类型可以省略，编译器自动计算返回值
+	
+	以后都推荐使用 [=](){} 的形式
+		
+		
+		
+	
+	
+
+
+
+
+
+
+
+	
+	
+		

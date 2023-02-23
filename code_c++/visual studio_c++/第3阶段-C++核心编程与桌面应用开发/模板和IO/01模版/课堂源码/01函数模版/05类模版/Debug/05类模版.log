@@ -1,0 +1,11 @@
+﻿生成启动时间为 2019/5/11 11:13:05。
+     1>项目“C:\Users\志山 刘\Desktop\C++核心编程\02模版和IO2天\01模版\课堂源码\01函数模版\05类模版\05类模版.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "05类模版.cpp"
+         05类模版.cpp
+     1>c:\users\志山 刘\desktop\c++核心编程\02模版和io2天\01模版\课堂源码\01函数模版\05类模版\05类模版.cpp(69): error C3747: 缺少默认 模板 参数: 参数 3
+     1>已完成生成项目“C:\Users\志山 刘\Desktop\C++核心编程\02模版和IO2天\01模版\课堂源码\01函数模版\05类模版\05类模版.vcxproj”(Rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.47

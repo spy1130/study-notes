@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01函数对象适配", "01函数对象适配\01函数对象适配.vcxproj", "{D7BA21E8-73D3-4BDF-A2E2-9582B436433D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02遍历算法", "02遍历算法\02遍历算法.vcxproj", "{FB3D5706-FDDF-49D7-8AF8-494218B38A2D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03查找算法", "03查找算法\03查找算法.vcxproj", "{6EFD90E2-B443-4F3E-B3E2-AA92648E9A59}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04排序算法", "04排序算法\04排序算法.vcxproj", "{7F3CE05A-B9AB-4753-8E17-678A63ECC78E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05拷贝和替换算法", "05拷贝和替换算法\05拷贝和替换算法.vcxproj", "{C71A7AF2-90AC-4CDA-8223-202AE9FDBC0D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06算术生成算法", "06算术生成算法\06算术生成算法.vcxproj", "{EA33CFE6-445E-44DD-9BE5-7145FE322926}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07集合算法", "07集合算法\07集合算法.vcxproj", "{C76C0528-FB1F-4AA1-B839-0EF9DC1E435B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "08综合案例", "08综合案例\08综合案例.vcxproj", "{F87F91ED-D37F-4028-8449-EF07A84F1782}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7BA21E8-73D3-4BDF-A2E2-9582B436433D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D7BA21E8-73D3-4BDF-A2E2-9582B436433D}.Debug|Win32.Build.0 = Debug|Win32
+		{D7BA21E8-73D3-4BDF-A2E2-9582B436433D}.Release|Win32.ActiveCfg = Release|Win32
+		{D7BA21E8-73D3-4BDF-A2E2-9582B436433D}.Release|Win32.Build.0 = Release|Win32
+		{FB3D5706-FDDF-49D7-8AF8-494218B38A2D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FB3D5706-FDDF-49D7-8AF8-494218B38A2D}.Debug|Win32.Build.0 = Debug|Win32
+		{FB3D5706-FDDF-49D7-8AF8-494218B38A2D}.Release|Win32.ActiveCfg = Release|Win32
+		{FB3D5706-FDDF-49D7-8AF8-494218B38A2D}.Release|Win32.Build.0 = Release|Win32
+		{6EFD90E2-B443-4F3E-B3E2-AA92648E9A59}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6EFD90E2-B443-4F3E-B3E2-AA92648E9A59}.Debug|Win32.Build.0 = Debug|Win32
+		{6EFD90E2-B443-4F3E-B3E2-AA92648E9A59}.Release|Win32.ActiveCfg = Release|Win32
+		{6EFD90E2-B443-4F3E-B3E2-AA92648E9A59}.Release|Win32.Build.0 = Release|Win32
+		{7F3CE05A-B9AB-4753-8E17-678A63ECC78E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7F3CE05A-B9AB-4753-8E17-678A63ECC78E}.Debug|Win32.Build.0 = Debug|Win32
+		{7F3CE05A-B9AB-4753-8E17-678A63ECC78E}.Release|Win32.ActiveCfg = Release|Win32
+		{7F3CE05A-B9AB-4753-8E17-678A63ECC78E}.Release|Win32.Build.0 = Release|Win32
+		{C71A7AF2-90AC-4CDA-8223-202AE9FDBC0D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C71A7AF2-90AC-4CDA-8223-202AE9FDBC0D}.Debug|Win32.Build.0 = Debug|Win32
+		{C71A7AF2-90AC-4CDA-8223-202AE9FDBC0D}.Release|Win32.ActiveCfg = Release|Win32
+		{C71A7AF2-90AC-4CDA-8223-202AE9FDBC0D}.Release|Win32.Build.0 = Release|Win32
+		{EA33CFE6-445E-44DD-9BE5-7145FE322926}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EA33CFE6-445E-44DD-9BE5-7145FE322926}.Debug|Win32.Build.0 = Debug|Win32
+		{EA33CFE6-445E-44DD-9BE5-7145FE322926}.Release|Win32.ActiveCfg = Release|Win32
+		{EA33CFE6-445E-44DD-9BE5-7145FE322926}.Release|Win32.Build.0 = Release|Win32
+		{C76C0528-FB1F-4AA1-B839-0EF9DC1E435B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C76C0528-FB1F-4AA1-B839-0EF9DC1E435B}.Debug|Win32.Build.0 = Debug|Win32
+		{C76C0528-FB1F-4AA1-B839-0EF9DC1E435B}.Release|Win32.ActiveCfg = Release|Win32
+		{C76C0528-FB1F-4AA1-B839-0EF9DC1E435B}.Release|Win32.Build.0 = Release|Win32
+		{F87F91ED-D37F-4028-8449-EF07A84F1782}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F87F91ED-D37F-4028-8449-EF07A84F1782}.Debug|Win32.Build.0 = Debug|Win32
+		{F87F91ED-D37F-4028-8449-EF07A84F1782}.Release|Win32.ActiveCfg = Release|Win32
+		{F87F91ED-D37F-4028-8449-EF07A84F1782}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

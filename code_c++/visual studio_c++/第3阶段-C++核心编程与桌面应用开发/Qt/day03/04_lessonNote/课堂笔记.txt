@@ -1,0 +1,177 @@
+1 listWidget
+	使用方式 addItem  或者 addItems
+	
+	QStringList ->   std::list<std::string>
+	//使用左移操作符添加成员
+	QStringList list;
+    list<<"床前明月光"<<"疑似地上霜"<<"举头望明月"<<"低头思故乡";
+	
+	
+2 treeWidget
+	使用方式 
+		1 设置标题，会根据setHeaderLabels 里边的成员数自己生成有多少列
+		2 添加根节点  treeWidget->addTopLevelItem
+		3 根节点下边添加子节点 item->addChild 
+		
+3 tableWidgeet
+	1 设置行数、列数  setRowCount  setColumnCount
+	2 设置水平的标题  setHorizontalLabels 
+	3 设置表格某行某列的数据 setItem(row,col,item)
+	
+4 容器
+	stacked Widget  页面切换需要我们自己去实现，一般使用按钮点击的时候切换
+		setCurrentIndex 方式切换到第几页，序号从0开始
+		
+		
+5 显示控件
+	label 可以显示静态图 pixmap属性
+		显示动态图 gif ， 要使用 movie 
+		setMovie 函数设置电影
+		movie->start()来播放动画
+		
+		
+6 自定义控件 
+	将一些基础的控件拼凑在一起，实现内部关联逻辑，并且对外部提供操作的接口
+	创建控件类
+		qt qt 设计师界面类   创建一个带UI文件的类
+		
+	主窗口想要使用自定义控件类
+		ui文件上先拖一个自定义控件类的父类，然后再提升为子类
+		
+		
+7 事件
+	当某个事件（鼠标、键盘）发生的时候，窗口就会收到这个事件，并且调用相应的事件处理函数，
+	事件处理函数的命名都是以Event结尾的
+	
+	事件先会到达窗口的event函数 ， 
+	event函数 返回值：true表示该事件得到处理，如果是false，没被处理，事件会继续传递到父窗口
+	通过判断QEvent 参数的类型得知事件的类型后，调用相应的事件处理函数
+		//判断event的类型
+		if(e->type()==QEvent::MouseMove)
+		{
+			this->mouseMoveEvent(static_cast<QMouseEvent *>(e));
+			return true;
+		}
+		//其他没有被处理的事件，就使用父类的event
+		return QLabel::event(e);
+	
+
+	鼠标事件
+		mousePressEvnet,mouseReleseEvent,mouseMoveEvent
+		mousePressEvnet
+			通过获取鼠标事件处理函数的参数，获取它的坐标和点击了哪个按键
+			//获取坐标
+			int x = ev->x();
+			int y = ev->y();
+			
+			//获取鼠标按键
+			Qt::MouseButton btn = ev->button();
+			
+			
+		mouseMoveEvent
+			
+			//获取鼠标按键，这里要使用buttons，获取的鼠标按钮的枚举值按位或的一个值
+			Qt::MouseButtons btns = ev->buttons();
+			
+			//通过按位与的方式来提取按了哪个按键
+			if(btns & Qt::LeftButton)
+			{
+				strButton += "LeftButton;";
+			}
+			
+			默认情况下，窗口不会主动跟踪鼠标
+			只有当某个鼠标按键按下的情况下才开始跟踪
+			如果想一开始跟踪，就要使用以下函数
+			this->setMouseTracking(true);
+	
+	事件过滤器
+		1 窗口调用installEventFilter来安装一个事件过滤器
+		2 参数是一个事件过滤器对象QObject，该对象的类要重写eventFilter的函数
+		事件过滤的时候，事件会先到达事件过滤器的eventFilter函数
+		对象可以使用自己作为自己的过滤器
+		返回值：true表示拦截，false表示不拦截，不拦截情况下事件会继续的到达窗口
+	
+		bool MyLabel::eventFilter(QObject *watched, QEvent *event)
+		{
+			if(event->type()==QEvent::MouseMove)
+			{
+				//返回true 表示拦截该事件
+				return true;
+			}
+			return false;
+		}
+		
+		
+	定时器事件
+		闹钟就是定时器，闹钟响了就是定时器事件
+		timerEvent
+		
+		通过startTimer来启动一个定时器，参数是毫秒，每隔相应的时间就会触发一个定时器事件
+		返回值就是定时器的id
+		
+		通过killTimer来杀死一个定时，参数就是定时器的id
+		
+		timerEvent定时器事件处理函数中通过event参数获取到当前事件是哪个定时器发出的，event->timerId()
+	
+	另一种定时器
+		使用QTimer 的方式创建定时器
+		通过关注信号 timeout 来接受定时器到时间的信号
+		通过start 来启动定时器，参数是信号触发间隔的毫秒
+		通过stop来停止定时器
+
+		
+		
+	重新画按钮
+		1 什么时候画
+			绘图事件：窗口需要重新显示的时候，就会收到一个绘图事件  paintEvent
+			收到绘图事件之后，窗口就要将自己画出来
+			
+		2 怎么画
+			画画的人   —— QPainter
+			画笔       —— QPen
+			画布       —— QPaintDevice
+			
+			QPainter ( 参数是绘图设备 ，this表示在窗口上绘图)
+				drawLine 划线 ， 两点成一线，参数就是两个点的坐标
+				drawRect 矩形 ， 参数是 左上角的点和 宽和高
+				drawEllips 画椭圆 ， 参数是 左上角的点和 宽和高  ，另一种方式就是 圆心 + rx + ry
+				
+			设置画家的画笔
+				setPen ( QPen)   ，画笔可以设置颜色和风格
+			设置画家的画刷
+				setBrush(QBrush) ， 填充封闭的图形， 也可以设置颜色 ，默认情况下，画刷不填充，还得设置风格
+				
+			搬动画家
+				translate ( x, y) 将画家移动到某个坐标开始画画
+			
+			
+	手动触发绘图事件
+		使用两个函数 
+		repaint ： 会马上触发绘图事件
+		update ： update做了一些优化 ，比如多次调用只会触发一次事件
+		
+		注意：不要在paintEvent处理函数中再触发绘图事件，会导致无限循环
+		
+	
+	绘图设备
+		QPixmap   对显示做了优化
+		QImage	   提供像素级别的访问操作
+		QPicture   作为录像机，记录painter画画的步骤，日后重现
+		
+		这些绘图设备都可以通过load和save来加载和保存文件
+		
+		
+作业
+	自定义按钮
+		默认红色
+		鼠标进来的时候，变成绿色   事件 enterEvent
+		鼠标移出去，变回红色            leaveEvent
+		鼠标按下，变成蓝色   mousePressEvnet
+		鼠标松开，变回绿色   mouseReleaseEvent
+		
+		
+		
+			
+	
+	
+			

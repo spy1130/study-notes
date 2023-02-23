@@ -1,0 +1,6 @@
+﻿  01 typedef的使用.c
+e:\0504\sendtostudent\day1_c\code\01 typedef的使用\01 typedef的使用\01 typedef的使用.c(41): warning C4101: “p4”: 未引用的局部变量
+e:\0504\sendtostudent\day1_c\code\01 typedef的使用\01 typedef的使用\01 typedef的使用.c(38): warning C4101: “p2”: 未引用的局部变量
+e:\0504\sendtostudent\day1_c\code\01 typedef的使用\01 typedef的使用\01 typedef的使用.c(41): warning C4101: “p3”: 未引用的局部变量
+e:\0504\sendtostudent\day1_c\code\01 typedef的使用\01 typedef的使用\01 typedef的使用.c(38): warning C4101: “p1”: 未引用的局部变量
+  01 typedef的使用.vcxproj -> E:\0504\sendToStudent\Day1_C\Code\01 typedef的使用\Debug\01 typedef的使用.exe

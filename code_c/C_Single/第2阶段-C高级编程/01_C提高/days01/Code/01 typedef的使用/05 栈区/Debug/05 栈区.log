@@ -1,0 +1,4 @@
+﻿  05 栈区.c
+e:\0504\sendtostudent\day1_c\code\01 typedef的使用\05 栈区\05 栈区.c(10): warning C4172: 返回局部变量或临时变量的地址
+e:\0504\sendtostudent\day1_c\code\01 typedef的使用\05 栈区\05 栈区.c(26): warning C4172: 返回局部变量或临时变量的地址
+  05 栈区.vcxproj -> E:\0504\sendToStudent\Day1_C\Code\01 typedef的使用\Debug\05 栈区.exe

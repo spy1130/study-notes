@@ -1,0 +1,4 @@
+﻿  08 const修饰的全局变量和局部变量.c
+e:\0504\sendtostudent\day1_c\code\01 typedef的使用\08 const修饰的全局变量和局部变量\08 const修饰的全局变量和局部变量.c(13): warning C4090: “初始化”: 不同的“const”限定符
+e:\0504\sendtostudent\day1_c\code\01 typedef的使用\08 const修饰的全局变量和局部变量\08 const修饰的全局变量和局部变量.c(29): warning C4090: “初始化”: 不同的“const”限定符
+  08 const修饰的全局变量和局部变量.vcxproj -> E:\0504\sendToStudent\Day1_C\Code\01 typedef的使用\Debug\08 const修饰的全局变量和局部变量.exe

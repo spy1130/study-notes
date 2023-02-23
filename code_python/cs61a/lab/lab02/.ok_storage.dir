@@ -1,0 +1,3 @@
+'lambda_curry2-correct', (0, 70)
+'composite_identity-correct', (512, 70)
+'cycle-correct', (1024, 70)

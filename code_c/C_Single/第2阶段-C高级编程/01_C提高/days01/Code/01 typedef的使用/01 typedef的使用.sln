@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01 typedef的使用", "01 typedef的使用\01 typedef的使用.vcxproj", "{8D377781-1E7A-4638-AC15-27FE79E7DD64}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02 void的使用", "02 void的使用\02 void的使用.vcxproj", "{2FC9AD63-0AAF-42A3-9C32-DC1DFAFA384E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03 sizeof的使用", "03 sizeof的使用\03 sizeof的使用.vcxproj", "{B28D4540-4C90-4696-8329-E35D33AD7C73}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 变量的修改方式", "04 变量的修改方式\04 变量的修改方式.vcxproj", "{B4A6B019-2A74-4906-B51C-2DF9640A34FF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05 栈区", "05 栈区\05 栈区.vcxproj", "{D62C5EF0-E780-45BE-A246-7BA6B57B3828}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06 堆区", "06 堆区\06 堆区.vcxproj", "{170B6EB3-9A42-4B8D-B8A7-27FD6C6FA405}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07 static和extern区别", "07 static和extern区别\07 static和extern区别.vcxproj", "{97802D51-B18D-4EF1-8A88-58B1041ABE90}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "08 const修饰的全局变量和局部变量", "08 const修饰的全局变量和局部变量\08 const修饰的全局变量和局部变量.vcxproj", "{D9D136CF-22E3-4139-9B16-18323C8073CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D377781-1E7A-4638-AC15-27FE79E7DD64}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8D377781-1E7A-4638-AC15-27FE79E7DD64}.Debug|Win32.Build.0 = Debug|Win32
+		{8D377781-1E7A-4638-AC15-27FE79E7DD64}.Release|Win32.ActiveCfg = Release|Win32
+		{8D377781-1E7A-4638-AC15-27FE79E7DD64}.Release|Win32.Build.0 = Release|Win32
+		{2FC9AD63-0AAF-42A3-9C32-DC1DFAFA384E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2FC9AD63-0AAF-42A3-9C32-DC1DFAFA384E}.Debug|Win32.Build.0 = Debug|Win32
+		{2FC9AD63-0AAF-42A3-9C32-DC1DFAFA384E}.Release|Win32.ActiveCfg = Release|Win32
+		{2FC9AD63-0AAF-42A3-9C32-DC1DFAFA384E}.Release|Win32.Build.0 = Release|Win32
+		{B28D4540-4C90-4696-8329-E35D33AD7C73}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B28D4540-4C90-4696-8329-E35D33AD7C73}.Debug|Win32.Build.0 = Debug|Win32
+		{B28D4540-4C90-4696-8329-E35D33AD7C73}.Release|Win32.ActiveCfg = Release|Win32
+		{B28D4540-4C90-4696-8329-E35D33AD7C73}.Release|Win32.Build.0 = Release|Win32
+		{B4A6B019-2A74-4906-B51C-2DF9640A34FF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B4A6B019-2A74-4906-B51C-2DF9640A34FF}.Debug|Win32.Build.0 = Debug|Win32
+		{B4A6B019-2A74-4906-B51C-2DF9640A34FF}.Release|Win32.ActiveCfg = Release|Win32
+		{B4A6B019-2A74-4906-B51C-2DF9640A34FF}.Release|Win32.Build.0 = Release|Win32
+		{D62C5EF0-E780-45BE-A246-7BA6B57B3828}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D62C5EF0-E780-45BE-A246-7BA6B57B3828}.Debug|Win32.Build.0 = Debug|Win32
+		{D62C5EF0-E780-45BE-A246-7BA6B57B3828}.Release|Win32.ActiveCfg = Release|Win32
+		{D62C5EF0-E780-45BE-A246-7BA6B57B3828}.Release|Win32.Build.0 = Release|Win32
+		{170B6EB3-9A42-4B8D-B8A7-27FD6C6FA405}.Debug|Win32.ActiveCfg = Debug|Win32
+		{170B6EB3-9A42-4B8D-B8A7-27FD6C6FA405}.Debug|Win32.Build.0 = Debug|Win32
+		{170B6EB3-9A42-4B8D-B8A7-27FD6C6FA405}.Release|Win32.ActiveCfg = Release|Win32
+		{170B6EB3-9A42-4B8D-B8A7-27FD6C6FA405}.Release|Win32.Build.0 = Release|Win32
+		{97802D51-B18D-4EF1-8A88-58B1041ABE90}.Debug|Win32.ActiveCfg = Debug|Win32
+		{97802D51-B18D-4EF1-8A88-58B1041ABE90}.Debug|Win32.Build.0 = Debug|Win32
+		{97802D51-B18D-4EF1-8A88-58B1041ABE90}.Release|Win32.ActiveCfg = Release|Win32
+		{97802D51-B18D-4EF1-8A88-58B1041ABE90}.Release|Win32.Build.0 = Release|Win32
+		{D9D136CF-22E3-4139-9B16-18323C8073CD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D9D136CF-22E3-4139-9B16-18323C8073CD}.Debug|Win32.Build.0 = Debug|Win32
+		{D9D136CF-22E3-4139-9B16-18323C8073CD}.Release|Win32.ActiveCfg = Release|Win32
+		{D9D136CF-22E3-4139-9B16-18323C8073CD}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,22 @@
+#Ó¢ÐÛµÄId
+heroId:1
+#Ó¢ÐÛµÄÐÕÃû
+heroName:çùÓñ
+#Ó¢ÐÛ¹¥»÷Á¦
+heroAtk:1000
+#Ó¢ÐÛ·ÀÓùÁ¦
+heroDef:9999
+#Ó¢ÐÛ¼ò½é
+heroInfo:ÎÞµÐ
+
+
+    
+aaaaaaaaaaaaa
+struct ConfigInfo
+{
+   char key[64];
+   char value[64];
+}
+
+
+ struct ConfigInfo * pArray  = malloc( sizeof(struct ConfigInfo) * 5  )
