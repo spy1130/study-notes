@@ -1,0 +1,17 @@
+﻿生成启动时间为 2019/4/27 15:16:44。
+     1>项目“C:\Users\志山 刘\Desktop\C++核心编程\01C++7天\C++ day01\课堂源码\01helloworld\02命名空间\02命名空间.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "02命名空间.cpp" test.cpp
+         test.cpp
+         02命名空间.cpp
+         正在生成代码...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\志山 刘\Desktop\C++核心编程\01C++7天\C++ day01\课堂源码\01helloworld\Debug\02命名空间.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\志山 刘\Desktop\C++核心编程\01C++7天\C++ day01\课堂源码\01helloworld\Debug\02命名空间.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\志山 刘\Desktop\C++核心编程\01C++7天\C++ day01\课堂源码\01helloworld\Debug\02命名空间.lib" /MACHINE:X86 "Debug\02命名空间.obj"
+         Debug\test.obj
+     1>02命名空间.obj : error LNK2019: 无法解析的外部符号 "void __cdecl myMaker1::func(void)" (?func@myMaker1@@YAXXZ)，该符号在函数 _main 中被引用
+     1>C:\Users\志山 刘\Desktop\C++核心编程\01C++7天\C++ day01\课堂源码\01helloworld\Debug\02命名空间.exe : fatal error LNK1120: 1 个无法解析的外部命令
+     1>已完成生成项目“C:\Users\志山 刘\Desktop\C++核心编程\01C++7天\C++ day01\课堂源码\01helloworld\02命名空间\02命名空间.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.52

@@ -1,0 +1,10 @@
+0.注意该游戏需要在Python的开发环境下才能运行！！！（没按Python那就算了吧...）
+
+1.若出现乱码（游戏中表现为空心方块）：
+打开源码下的fonts文件夹，将里面的所有字体安装即可（右键安装）
+
+2.若出现报错 ModuleNotFoundError: No module named 'xxxxx'：
+只需要将单引号里相应的库安装即可（打开cmd，输入 pip install xxxxx）
+ps. 若是出现 No module named 'win32gui'，则需要安装的是'pywin32'
+
+3.其他问题直接问我吧，当场给你修~

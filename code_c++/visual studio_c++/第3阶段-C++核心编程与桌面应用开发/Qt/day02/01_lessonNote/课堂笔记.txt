@@ -1,0 +1,146 @@
+1 QMainWidow
+	包括了一个菜单栏、多个工具栏、一个状态栏、多个停靠部件（锚接部件）、一个核心部件
+	菜单栏
+	    //菜单栏，获取当前窗口的菜单栏，没有的话会自动创建一个
+		QMenuBar *mb = this->menuBar();
+	工具栏
+		QToolBar *toolBar = this->addToolBar("");
+		
+		//设置工具栏停靠范围
+		toolBar->setAllowedAreas(Qt::LeftToolBarArea|Qt::RightToolBarArea);
+		
+		//设置工具栏不可以浮动
+		toolBar->setFloatable(false);
+
+		//设置工具栏不允许拖动
+		toolBar->setMovable(false);
+
+	状态栏
+		//获取窗口的状态栏，没有的话就创建一个
+		QStatusBar *sb = this->statusBar();    
+		
+		//添加左侧信息
+		QLabel *labelLeft = new QLabel("左侧信息",this);
+		sb->addWidget(labelLeft);
+		//添加右侧信息
+		QLabel *labelRight = new QLabel("右侧信息",this);
+		sb->addPermanentWidget(labelRight);
+		
+		
+	停靠部件，可以有多个
+		QDockWidget *dockWidget = new QDockWidget("停靠部件",this);
+		//默认情况下没有核心部件作为参照物，停靠部件会占完窗口
+		this->addDockWidget(Qt::BottomDockWidgetArea,dockWidget);
+		
+		
+	核心部件，只有一个
+		//添加核心部件
+		QTextEdit *textEdit = new QTextEdit(this);
+		this->setCentralWidget(textEdit);
+	
+	
+	
+2 UI文件的使用
+	创建项目的时候保留UI
+	setupUI函数，就是关联UI文件的代码到程序
+	原理就是qt将ui文件转化成了C++的代码
+	要使用ui里边的对象
+	就直接使用 ui-> 对象名  来获取窗口对象指针
+	
+	
+	
+3 资源文件使用
+	1 使用绝对路径的方式使用资源
+		要将资源也打包好发送给人家才可以看到
+	2 使用qt的资源文件
+		项目添加文件 qt - > qt resource file -> 文件名 res 
+		添加前缀 /  -> 添加文件 （文件只能从项目目录下面去引进）
+		
+		使用资源文件的方式
+			冒号 :  +  前缀 /  + qrc文件里边的文件名
+			
+			":/Image/Luffy.png"
+	
+4 对话框
+	没有最大化、最小化按钮的窗口
+	
+	模态对话框 ，就是对话框还没有关闭前不能操作同一个进程的其他窗口
+	非模态对话框，就是对话框没有关闭前也能操作同一个进程的其他窗口
+	
+	创建模态
+		QDialog::exec() 函数 ，是一个阻塞的消息循环函数
+		
+	创建非模态对话框
+		使用show 函数 来直接显示窗口就可以 ，非阻塞的情况下要使用new的方式来创建对话框对象
+		
+		内存泄漏问题，模态对话框关闭后并没有马上释放
+		通过设置窗口的属性来让其关闭后自动释放
+		dlg->setAttribute(Qt::WA_DeleteOnClose);
+		
+		
+5 系统标准对话框
+
+	QMessageBox 用来提示用户某条信息，分为以下几个级别
+		info
+		warning
+		critical
+		question
+		都挺可以通过 QMessageBox::函数名的方式 来调用，产生模态的对话框
+		
+		
+		question 特殊 ，可以指定对话框的按钮，通过返回值来获取用户点击了哪个按钮
+		
+			if(QMessageBox::Ok==
+					QMessageBox::question(this,"问你个事","你有对象吗？",
+								  QMessageBox::Ok|QMessageBox::Cancel))
+			{
+				qDebug()<<"点击了Ok";
+			}			
+	
+	文件对话框
+		使用QFileDialog 来打开一个文件对话框
+		常用的函数是getOpenFileName来选择单一某文件
+		可以指定默认路径，
+		还可以指定文件过滤器，格式： 类型名称 ( *.类型后缀 ...) ;; 类型名称2 ...
+		通过返回值来获取用户选取了哪个文件
+		 QString fileName = QFileDialog::getOpenFileName(this,"打开一个文件",
+                                 "G:\\C7_Qt\\day02\\03_resources\\Image",
+                                 "PNG (*.png) ;; JPG (*.jpg) ;; GIF (*.gif) ;; all (*.*)");
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+								 
+6 布局
+	两类：静态、动态
+	静态就是位置和大小不会跟着外部窗口变化而变化
+	动态就是位置和大小会跟着外部窗口变化而变化
+	
+	常用动态布局
+		水平、垂直、栅格、表单布局
+		推荐使用widget的自带的布局功能
+	
+	使用弹簧来调整布局的位置，居中
+	栅格布局可以将空间分为几行几列的表格，方便对齐
+	大小策略：默认情况下动态布局，子窗口的大小会跟着父窗口的大小变化而变化，调整水平或者垂直策略，变成固定
+	调整子窗口和父窗口之间的间隙，设置父窗口的margin ，调整子窗口之间的间隙就调整spacing
+	
+	调整窗口的固定大小，就是将窗口的最大值和最小值都设为同一个值
+		
+								 
+								 
+7 按钮组
+	radio button 单选按钮，互斥域的问题，如果想将某些单选按钮隔离开，就用容器将他们隔离，一般用Group Box
+	check box 多选按钮 ，有三态 tristate ，每次点击按钮的时候stateChange信号里边传进来
+								 
+								 
+			
+
+
+
+	
+	
+								 
