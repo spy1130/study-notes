@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\DEPQ\DEPQ.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DEPQ_SMMH.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DEPQ_SMMH_delMax.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DEPQ_SMMH_delMin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DEPQ_SMMH_implementation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DEPQ_SMMH_insert.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DEPQ_SMMH_macro.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DEPQ\DEPQ_Test.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{ab8c9ad7-3531-44ae-a7d6-3730b6d2f1ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{1830671c-a150-4fe6-9b94-57896436018c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\DEPQ\DEPQ_Test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\UniPrint\print_basic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
