@@ -2,7 +2,7 @@
 #include <iostream>
 #include <ctime>
 #define ElemType int
-#define MAXSIZE 20
+#define MAXSIZE 50
 using namespace std;
 
 typedef struct SqList
@@ -10,6 +10,7 @@ typedef struct SqList
     ElemType *elem; // 顺序线性表的表头
     int length;     // 顺序线性表的长度
 } SQL;
+void Union(SqList &a, SqList &b);
 bool InitList(SqList &L)
 {
     L.elem = new ElemType[MAXSIZE]; // 在堆区开辟内存
@@ -29,7 +30,7 @@ bool InsertList(SqList &L, const ElemType &e, const int &i)
         cerr << "can not insert!" << endl;
         return false;
     }
-    if (i < 0 || i > L.length)
+    if (i < 0 || i > L.length+1)//+1用来实现合并
     {
         cerr << "wrong insert position!" << endl;
         return false;
@@ -120,24 +121,45 @@ void DestroyList(SqList &L)
 
 int main()
 {
-    SQL list;
+    SQL list1, list2;
     int e;
-    InitList(list);
+    InitList(list1);
+    InitList(list2);
     srand(time(nullptr)); // 用当前时间作为种子
-    for (int i = 0; i < MAXSIZE; i++)
-    {       
+    for (int i = 0; i < 10; i++)
+    {
         int random = (rand() % (100 - 1)) + 1;
-        InsertList(list, random, i);
+        InsertList(list1, random, i);
     }
-    GetELem(list, 1, e);
-    int loc = LocateList(list, e);
+    for (int i = 0; i < 10; i++)
+    {
+        int random = (rand() % (100 - 1)) + 1;
+        InsertList(list2, random, i);
+    }
+    GetELem(list1, 1, e);
+    int loc = LocateList(list1, e);
     cout << e << " " << loc << endl;
-    PrintList(list);
-    EraseList(list, 3);
-    PrintList(list);
-    CLearList(list);
-    IsEmpty(list);
-    DestroyList(list);
+    PrintList(list1);
+    PrintList(list2);
+    EraseList(list1, 3);
+    PrintList(list1);
+    Union(list1, list2);
+    PrintList(list1);
+    CLearList(list1);
+    IsEmpty(list1);
+    DestroyList(list1);
     system("pause");
     return EXIT_SUCCESS;
+}
+void Union(SqList &a, SqList &b)
+{
+    int La_len = a.length;
+    int Lb_len = b.length;
+    int e;
+    for (int i = 1; i <= Lb_len; i++)
+    {
+        GetELem(b, i, e);
+        if (!LocateList(a, e))
+            InsertList(a, e,++La_len);
+    }
 }
