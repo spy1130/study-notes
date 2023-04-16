@@ -115,7 +115,7 @@ void DestroyList(SqList &L)
 {
     if (L.elem)
     {
-        delete L.elem;
+        delete[] L.elem;
     }
 }
 
