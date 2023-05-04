@@ -83,7 +83,15 @@ ElemType GetHead(const SqQueue Q)
 }
 int main()
 {
-
+    SqQueue Q;
+    InitQueue(Q);
+    CreatQueue(Q, 5);
+    PrintQueue(Q);
+    EraseQueue(Q);
+    PrintQueue(Q);
+    cout << "length:" << GetLength(Q) << endl;
+    cout << "head:" << GetHead(Q) << endl;
+    
     system("pause");
     return EXIT_SUCCESS;
 }

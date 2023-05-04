@@ -97,6 +97,16 @@ void DestoyStack(SqStack &S)
     }
 }
 int main(){
+    SqStack S;
+    InitStack(S);
+    CreatStack(S, 5);
+    ElemType e;
+    Pop(S, e);
+    cout << e << endl;
+    cout << StackLength(S) << endl;
+    ClearStack(S);
+    cout << StackLength(S) << endl;
+    DestoyStack(S);
 
     system("pause");
     return EXIT_SUCCESS;

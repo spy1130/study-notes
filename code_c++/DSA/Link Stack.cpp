@@ -93,6 +93,16 @@ bool DestoryStack(LinkStack &S)
     return true;
 }
 int main(){
+    LinkStack S;
+    InitStack(S);
+    CreatStack(S, 5);
+    int e;
+    Pop(S, e);
+    cout << e << endl;
+    cout << StackLength(S) << endl;
+    ClearStack(S);
+    cout << StackLength(S) << endl;
+    DestoryStack(S);
 
     system("pause");
     return EXIT_SUCCESS;
