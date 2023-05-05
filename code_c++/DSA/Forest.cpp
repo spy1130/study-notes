@@ -228,7 +228,7 @@ int main()
     cout << "森林的高度为：" << Height(T) << endl;
     cout << "森林的宽度为：" << Width(T) << endl;
     cout << "森林的结点数为：" << NodeCount(T) << endl;
-    cout << "森林的度为2的结点数为：" << DegreeCount(T, 2) << endl;
+    cout << "森林的度为2的结点数为:" << DegreeCount(T, 2) << endl;
     cout << "森林的度最大的结点为：" << MaxDegreeNode(T)->data << endl;
     cout << "森林的度最小的结点为：" << MinDegreeNode(T)->data << endl;
     ForestToBinaryTree(T, BT);
