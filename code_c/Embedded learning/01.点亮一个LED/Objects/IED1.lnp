@@ -1,0 +1,3 @@
+".\Objects\IED.obj" 
+TO ".\Objects\IED1" 
+PRINT(".\Listings\IED1.m51") RAMSIZE(256) 
