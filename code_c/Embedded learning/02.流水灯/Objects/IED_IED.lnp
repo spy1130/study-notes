@@ -1,0 +1,5 @@
+".\Objects\STARTUP.obj",
+".\Objects\IED_IED.obj",
+".\Objects\Æð·çÁË.obj" 
+TO ".\Objects\IED_IED" 
+PRINT(".\Listings\IED_IED.m51") RAMSIZE(256) 

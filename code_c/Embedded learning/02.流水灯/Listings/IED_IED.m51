@@ -1,0 +1,213 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    05/07/2023  23:50:36  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+E:\APPLICATIONS\KEIL_5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\IED_IED.obj, .\Objects\起风了.obj TO .\Objects\
+>> IED_IED PRINT (.\Listings\IED_IED.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\IED_IED.obj (IED_IED)
+  .\Objects\起风了.obj (______)
+  E:\APPLICATIONS\KEIL_5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\IED_IED (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         ?DT?______
+            IDATA   000EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     02FDH     UNIT         ?CO?______
+            CODE    0300H     008CH     UNIT         ?C_C51STARTUP
+            CODE    038CH     006FH     UNIT         ?PR?MAIN?______
+            CODE    03FBH     000DH     UNIT         ?PR?DELAY500MS?IED_IED
+            CODE    0408H     000DH     UNIT         ?C_INITSEG
+            CODE    0415H     000CH     UNIT         ?PR?MAIN?IED_IED
+            CODE    0421H     000BH     UNIT         ?PR?_DELAY?______
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\IED_IED (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?IED_IED
+  +--> ?C_INITSEG
+
+?PR?MAIN?IED_IED
+  +--> ?PR?DELAY500MS?IED_IED
+
+
+
+IGNORED SYMBOLS:
+   MAIN
+
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  05/07/2023  23:50:36  PAGE 2
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\IED_IED (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0300H         SEGMENT       ?C_C51STARTUP
+  I:000EH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0303H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0300H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0300H         LINE#         133
+  C:0302H         LINE#         134
+  C:0303H         LINE#         135
+  C:0304H         LINE#         136
+  C:0306H         LINE#         185
+  C:0309H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        IED_IED
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0415H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00C8H         PUBLIC        T2CON
+  C:03FBH         PUBLIC        Delay500ms
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          DELAY500MS
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  D:0005H         SYMBOL        k
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  05/07/2023  23:50:36  PAGE 3
+
+
+  -------         ENDDO         
+  C:03FBH         LINE#         4
+  C:03FBH         LINE#         5
+  C:03FBH         LINE#         7
+  C:03FDH         LINE#         8
+  C:03FFH         LINE#         9
+  C:0401H         LINE#         11
+  C:0401H         LINE#         13
+  C:0401H         LINE#         14
+  C:0403H         LINE#         15
+  C:0405H         LINE#         16
+  C:0407H         LINE#         17
+  -------         ENDPROC       DELAY500MS
+  -------         PROC          MAIN
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0415H         LINE#         18
+  C:0415H         LINE#         19
+  C:0417H         LINE#         20
+  C:0417H         LINE#         21
+  C:041BH         LINE#         22
+  C:041CH         LINE#         23
+  C:041FH         LINE#         24
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        IED_IED
+
+  -------         MODULE        ______
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:0008H         PUBLIC        pointer
+  D:00A8H         PUBLIC        IE
+  C:0421H         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  B:0090H.5       PUBLIC        BEEP
+  C:038CH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0003H         PUBLIC        FREQUENCY
+  C:002DH         PUBLIC        SOUNDTONE
+  D:000AH         PUBLIC        soundplayLength
+  C:011EH         PUBLIC        SOUNDLENGTH
+  D:000CH         PUBLIC        soundFrequency
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:038CH         LINE#         15
+  C:038CH         LINE#         16
+  C:038CH         LINE#         17
+  C:0397H         LINE#         18
+  C:0397H         LINE#         19
+  C:03B3H         LINE#         20
+  C:03D5H         LINE#         21
+  C:03E2H         LINE#         22
+  C:03E2H         LINE#         23
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  05/07/2023  23:50:36  PAGE 4
+
+
+  C:03E4H         LINE#         24
+  C:03EBH         LINE#         25
+  C:03EDH         LINE#         26
+  C:03F7H         LINE#         27
+  C:03FAH         LINE#         28
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        counter
+  C:0421H         LINE#         30
+  C:0421H         LINE#         31
+  C:0421H         LINE#         32
+  C:042BH         LINE#         34
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        ______
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  .\Objects\起风了.obj (______)
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?______
+
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  MAIN
+    MODULE:  E:\APPLICATIONS\KEIL_5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 030DH
+
+Program Size: data=15.0 xdata=0 code=1068
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  2 ERROR(S)

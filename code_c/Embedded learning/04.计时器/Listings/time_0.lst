@@ -1,0 +1,46 @@
+C51 COMPILER V9.60.7.0   TIME_0                                                            05/10/2023 00:30:56 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TIME_0
+OBJECT MODULE PLACED IN .\Objects\time_0.obj
+COMPILER INVOKED BY: E:\Applications\Keil_5\C51\BIN\C51.EXE time_0.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.
+                    -\Listings\time_0.lst) TABS(2) OBJECT(.\Objects\time_0.obj)
+
+line level    source
+
+   1          #include "reg52.h"
+   2          
+   3          sbit LED=P2^7;
+   4          
+   5          int main(){
+   6   1        unsigned int cnt=0;
+   7   1        
+   8   1        TMOD=0X01;//设置特殊功能寄存器TMOD，配置好工作模式
+   9   1        
+  10   1        TH0=0xFC;
+  11   1        TL0=0x6E;
+  12   1        TR0=1;//启动(打开)定时器
+  13   1          while(1){
+  14   2            if(TF0==1){
+  15   3              TF0=0;//计时清零
+  16   3              TH0=0xFC;
+  17   3              TL0=0x6E;//重新计时
+  18   3              cnt++;
+  19   3              if(cnt>=500){
+  20   4              LED=~LED;}}
+  21   2          }
+  22   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     43    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

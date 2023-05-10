@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\time_0.obj" 
+TO ".\Objects\time 0" 
+PRINT(".\Listings\time 0.m51") RAMSIZE(256) 
