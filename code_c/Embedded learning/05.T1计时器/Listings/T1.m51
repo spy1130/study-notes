@@ -1,0 +1,226 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    05/13/2023  15:53:40  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+E:\APPLICATIONS\KEIL_5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\T1.obj TO .\Objects\T1 PRINT (.\Listings\T1.m51
+>> ) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\T1.obj (T1)
+  E:\APPLICATIONS\KEIL_5\C51\LIB\C51S.LIB (?C?LMUL)
+  E:\APPLICATIONS\KEIL_5\C51\LIB\C51S.LIB (?C?ULDIV)
+  E:\APPLICATIONS\KEIL_5\C51\LIB\C51S.LIB (?C?ULSHR)
+
+
+LINK MAP OF MODULE:  .\Objects\T1 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0008H     UNIT         _DATA_GROUP_
+            DATA    0010H     0004H     UNIT         ?DT?T1
+            IDATA   0014H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0130H     UNIT         ?C?LIB_CODE
+            CODE    0133H     0064H     UNIT         ?PR?_CONFIGTIME0?T1
+            CODE    0197H     0064H     UNIT         ?PR?_CONFIGTIME1?T1
+            CODE    01FBH     0056H     UNIT         ?PR?MAIN?T1
+            CODE    0251H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\T1 (?C_STARTUP)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?T1
+
+?PR?MAIN?T1                    0008H    0004H
+  +--> ?PR?_CONFIGTIME0?T1
+  +--> ?PR?_CONFIGTIME1?T1
+
+?PR?_CONFIGTIME0?T1            000CH    0004H
+
+?PR?_CONFIGTIME1?T1            000CH    0004H
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\T1 (?C_STARTUP)
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  05/13/2023  15:53:40  PAGE 2
+
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0251H         SEGMENT       ?C_C51STARTUP
+  I:0014H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0254H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0251H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0251H         LINE#         133
+  C:0253H         LINE#         134
+  C:0254H         LINE#         135
+  C:0255H         LINE#         136
+  C:0257H         LINE#         185
+  C:025AH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        T1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A0H.1       PUBLIC        LED2
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0133H         PUBLIC        _ConfigTime0
+  C:0197H         PUBLIC        _ConfigTime1
+  D:0010H         PUBLIC        T0RH
+  D:0011H         PUBLIC        T1RH
+  D:0012H         PUBLIC        T0RL
+  D:0013H         PUBLIC        T1RL
+  C:01FBH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:0088H.5       PUBLIC        TF0
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  05/13/2023  15:53:40  PAGE 3
+
+
+  B:0088H.7       PUBLIC        TF1
+  D:008CH         PUBLIC        TH0
+  D:008DH         PUBLIC        TH1
+  D:008AH         PUBLIC        TL0
+  D:008BH         PUBLIC        TL1
+  B:00A0H.0       PUBLIC        LED
+  B:0088H.4       PUBLIC        TR0
+  B:0088H.6       PUBLIC        TR1
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _CONFIGTIME0
+  D:0002H         SYMBOL        ms
+  -------         DO            
+  D:000CH         SYMBOL        temp
+  -------         ENDDO         
+  C:0133H         LINE#         10
+  C:0133H         LINE#         11
+  C:0133H         LINE#         13
+  C:013FH         LINE#         14
+  C:015FH         LINE#         15
+  C:0175H         LINE#         16
+  C:0183H         LINE#         17
+  C:0186H         LINE#         18
+  C:0189H         LINE#         19
+  C:018CH         LINE#         21
+  C:018FH         LINE#         22
+  C:0192H         LINE#         23
+  C:0194H         LINE#         24
+  C:0196H         LINE#         25
+  -------         ENDPROC       _CONFIGTIME0
+  -------         PROC          _CONFIGTIME1
+  D:0002H         SYMBOL        ms
+  -------         DO            
+  D:000CH         SYMBOL        temp
+  -------         ENDDO         
+  C:0197H         LINE#         26
+  C:0197H         LINE#         27
+  C:0197H         LINE#         29
+  C:01A3H         LINE#         30
+  C:01C3H         LINE#         31
+  C:01D9H         LINE#         32
+  C:01E7H         LINE#         33
+  C:01EAH         LINE#         34
+  C:01EDH         LINE#         35
+  C:01F0H         LINE#         37
+  C:01F3H         LINE#         38
+  C:01F6H         LINE#         39
+  C:01F8H         LINE#         40
+  C:01FAH         LINE#         41
+  -------         ENDPROC       _CONFIGTIME1
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        cnt0
+  D:000AH         SYMBOL        cnt1
+  -------         ENDDO         
+  C:01FBH         LINE#         42
+  C:01FBH         LINE#         43
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  05/13/2023  15:53:40  PAGE 4
+
+
+  C:01FBH         LINE#         46
+  C:0202H         LINE#         47
+  C:0209H         LINE#         48
+  C:0209H         LINE#         49
+  C:0209H         LINE#         51
+  C:020CH         LINE#         52
+  C:020CH         LINE#         53
+  C:020EH         LINE#         54
+  C:0211H         LINE#         55
+  C:0214H         LINE#         56
+  C:021CH         LINE#         57
+  C:0225H         LINE#         58
+  C:022AH         LINE#         59
+  C:022CH         LINE#         60
+  C:022CH         LINE#         62
+  C:022FH         LINE#         63
+  C:022FH         LINE#         64
+  C:0231H         LINE#         65
+  C:0234H         LINE#         66
+  C:0237H         LINE#         67
+  C:023FH         LINE#         68
+  C:0248H         LINE#         69
+  C:024DH         LINE#         70
+  C:024FH         LINE#         71
+  C:024FH         LINE#         72
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        T1
+
+  -------         MODULE        ?C?LMUL
+  C:0003H         PUBLIC        ?C?LMUL
+  -------         ENDMOD        ?C?LMUL
+
+  -------         MODULE        ?C?ULDIV
+  C:008EH         PUBLIC        ?C?ULDIV
+  -------         ENDMOD        ?C?ULDIV
+
+  -------         MODULE        ?C?ULSHR
+  C:0120H         PUBLIC        ?C?ULSHR
+  -------         ENDMOD        ?C?ULSHR
+
+Program Size: data=21.0 xdata=0 code=605
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

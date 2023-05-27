@@ -1,0 +1,99 @@
+C51 COMPILER V9.60.7.0   T1                                                                05/13/2023 15:53:38 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE T1
+OBJECT MODULE PLACED IN .\Objects\T1.obj
+COMPILER INVOKED BY: E:\Applications\Keil_5\C51\BIN\C51.EXE T1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Lis
+                    -tings\T1.lst) TABS(2) OBJECT(.\Objects\T1.obj)
+
+line level    source
+
+   1          #include "reg52.h"
+   2          
+   3          sbit LED = P2^0;
+   4          sbit LED2 =P2^1;
+   5          
+   6          unsigned char T0RH, T0RL;
+   7          unsigned char T1RH, T1RL;
+   8          
+   9          // 1<=max<=71
+  10          void ConfigTime0(unsigned int ms)
+  11          {
+  12   1        unsigned long temp;
+  13   1        temp = 11059200 / 12; // 计数频率 65536
+  14   1        temp = (temp * ms) / 1000;
+  15   1        temp = 65536 - temp;         // 初值
+  16   1        T0RH = (unsigned char)(temp >> 8); // 保留高八位
+  17   1        T0RL = (unsigned char)(temp);      // 保留低八位
+  18   1        TMOD &=0XF0;//与操作符，把后面清0（1111 0000）1/0->0
+  19   1        TMOD |= 0X01; // 设置特殊功能寄存器TMOD\T0，配置好工作模式,或操作符可以防止影响已设置的值 1/0->1
+  20   1      
+  21   1        TH0 = T0RH;
+  22   1        TL0 = T0RL;
+  23   1        TF0 = 0; // 清除TF0标志
+  24   1        TR0 = 1; // 启动(打开)定时器
+  25   1      }
+  26          void ConfigTime1(unsigned int ms)
+  27          {
+  28   1        unsigned long temp;
+  29   1        temp = 11059200 / 12; // 计数频率 65536
+  30   1        temp = (temp * ms) / 1000;
+  31   1        temp = 65536 - temp;         // 初值
+  32   1        T1RH = (unsigned char)(temp >> 8); // 保留高八位
+  33   1        T1RL = (unsigned char)(temp);      // 保留低八位
+  34   1        TMOD &=0X0F;//与操作符，把前面清0（0000 1111）1/0->0
+  35   1        TMOD |= 0X10; // 设置特殊功能寄存器TMOD\T1，配置好工作模式
+  36   1      
+  37   1        TH1 = T1RH;
+  38   1        TL1 = T1RL;
+  39   1        TF1 = 0; // 清除TF1标志
+  40   1        TR1 = 1; // 启动(打开)定时器
+  41   1      }
+  42          int main()
+  43          {
+  44   1        unsigned int cnt0,cnt1;
+  45   1        
+  46   1        ConfigTime0(2);//设定2ms时间
+  47   1        ConfigTime1(4);//设定4ms时间
+  48   1        while (1)
+  49   1        { //轮询模式
+  50   2          //判断T0，是否到了时间（溢出）
+  51   2          if (TF0 == 1)
+  52   2          {
+  53   3            TF0 = 0; // 计时清零
+  54   3            TH0 = T0RH;
+C51 COMPILER V9.60.7.0   T1                                                                05/13/2023 15:53:38 PAGE 2   
+
+  55   3            TL0 = T0RL; // 重新计时
+  56   3            cnt0++;
+  57   3            if(cnt0>=500){
+  58   4            cnt0=0;
+  59   4            LED = !LED;}
+  60   3          }
+  61   2          //判断T1，是否到了时间（溢出）
+  62   2          if (TF1 == 1)
+  63   2          {
+  64   3            TF1 = 0; // 计时清零
+  65   3            TH1 = T1RH;
+  66   3            TL1 = T1RL; // 重新计时
+  67   3            cnt1++;
+  68   3            if(cnt1>=500){
+  69   4            cnt1=0;
+  70   4            LED2 = !LED2;}
+  71   3          }
+  72   2        }
+  73   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    286    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4      12
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

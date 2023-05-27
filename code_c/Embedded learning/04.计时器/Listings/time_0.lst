@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   TIME_0                                                            05/10/2023 00:30:56 PAGE 1   
+C51 COMPILER V9.60.7.0   TIME_0                                                            05/13/2023 00:45:47 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TIME_0
@@ -10,34 +10,50 @@ line level    source
 
    1          #include "reg52.h"
    2          
-   3          sbit LED=P2^7;
+   3          sbit LED = P2^0;
    4          
-   5          int main(){
-   6   1        unsigned int cnt=0;
-   7   1        
-   8   1        TMOD=0X01;//设置特殊功能寄存器TMOD，配置好工作模式
-   9   1        
-  10   1        TH0=0xFC;
-  11   1        TL0=0x6E;
-  12   1        TR0=1;//启动(打开)定时器
-  13   1          while(1){
-  14   2            if(TF0==1){
-  15   3              TF0=0;//计时清零
-  16   3              TH0=0xFC;
-  17   3              TL0=0x6E;//重新计时
-  18   3              cnt++;
-  19   3              if(cnt>=500){
-  20   4              LED=~LED;}}
-  21   2          }
-  22   1      }
+   5          unsigned char T0RH, T0RL;
+   6          
+   7          // 1<=max<=71
+   8          void ConfigTime0(unsigned int ms)
+   9          {
+  10   1        unsigned long temp;
+  11   1        temp = 11059200 / 12; // 计数频率 65536
+  12   1        temp = (temp * ms) / 1000;
+  13   1        temp = 65536 - temp;         // 初值
+  14   1        T0RH = (unsigned char)(temp >> 8); // 保留高八位
+  15   1        T0RL = (unsigned char)(temp);      // 保留低八位
+  16   1      
+  17   1        TMOD = 0X01; // 设置特殊功能寄存器TMOD，配置好工作模式
+  18   1      
+  19   1        TH0 = T0RH;
+  20   1        TL0 = T0RL;
+  21   1        TF0 = 0; // 清除TF0标志
+  22   1        TR0 = 1; // 启动(打开)定时器
+  23   1      }
+  24          int main()
+  25          {
+  26   1      
+  27   1        ConfigTime0(10000); // 延时时间
+  28   1        while (1)
+  29   1        {
+  30   2          if (TF0 == 1)
+  31   2          {
+  32   3            TF0 = 0; // 计时清零
+  33   3            TH0 = T0RH;
+  34   3            TL0 = T0RL; // 重新计时
+  35   3            LED = !LED;
+  36   3          }
+  37   2        }
+  38   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     43    ----
+   CODE SIZE        =    119    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----    ----
+   DATA SIZE        =      2       4
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

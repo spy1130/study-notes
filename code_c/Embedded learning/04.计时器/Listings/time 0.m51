@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    05/10/2023  00:30:56  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    05/13/2023  00:45:47  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
@@ -12,6 +12,9 @@ MEMORY MODEL: SMALL
 INPUT MODULES INCLUDED:
   .\Objects\STARTUP.obj (?C_STARTUP)
   .\Objects\time_0.obj (TIME_0)
+  E:\APPLICATIONS\KEIL_5\C51\LIB\C51S.LIB (?C?LMUL)
+  E:\APPLICATIONS\KEIL_5\C51\LIB\C51S.LIB (?C?ULDIV)
+  E:\APPLICATIONS\KEIL_5\C51\LIB\C51S.LIB (?C?ULSHR)
 
 
 LINK MAP OF MODULE:  .\Objects\time 0 (?C_STARTUP)
@@ -22,23 +25,32 @@ LINK MAP OF MODULE:  .\Objects\time 0 (?C_STARTUP)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            IDATA   0008H     0001H     UNIT         ?STACK
+            DATA    0008H     0004H     UNIT         _DATA_GROUP_
+            DATA    000CH     0002H     UNIT         ?DT?TIME_0
+            IDATA   000EH     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     002BH     UNIT         ?PR?MAIN?TIME_0
-            CODE    002EH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0003H     0130H     UNIT         ?C?LIB_CODE
+            CODE    0133H     0061H     UNIT         ?PR?_CONFIGTIME0?TIME_0
+            CODE    0194H     0016H     UNIT         ?PR?MAIN?TIME_0
+            CODE    01AAH     000CH     UNIT         ?C_C51STARTUP
 
 
 
 OVERLAY MAP OF MODULE:   .\Objects\time 0 (?C_STARTUP)
 
 
-SEGMENT
-  +--> CALLED SEGMENT
----------------------
-?C_C51STARTUP
+SEGMENT                           DATA_GROUP 
+  +--> CALLED SEGMENT           START    LENGTH
+-----------------------------------------------
+?C_C51STARTUP                   -----    -----
   +--> ?PR?MAIN?TIME_0
+
+?PR?MAIN?TIME_0                 -----    -----
+  +--> ?PR?_CONFIGTIME0?TIME_0
+
+?PR?_CONFIGTIME0?TIME_0         0008H    0004H
 
 
 
@@ -47,9 +59,12 @@ SYMBOL TABLE OF MODULE:  .\Objects\time 0 (?C_STARTUP)
   VALUE           TYPE          NAME
   ----------------------------------
 
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  05/13/2023  00:45:47  PAGE 2
+
+
   -------         MODULE        ?C_STARTUP
-  C:002EH         SEGMENT       ?C_C51STARTUP
-  I:0008H         SEGMENT       ?STACK
+  C:01AAH         SEGMENT       ?C_C51STARTUP
+  I:000EH         SEGMENT       ?STACK
   C:0000H         PUBLIC        ?C_STARTUP
   D:00E0H         SYMBOL        ACC
   D:00F0H         SYMBOL        B
@@ -58,10 +73,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\time 0 (?C_STARTUP)
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
   N:0080H         SYMBOL        IDATALEN
-  C:0031H         SYMBOL        IDATALOOP
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  05/10/2023  00:30:56  PAGE 2
-
-
+  C:01ADH         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
   N:0100H         SYMBOL        PBPSTACKTOP
   N:0000H         SYMBOL        PDATALEN
@@ -70,18 +82,18 @@ SYMBOL TABLE OF MODULE:  .\Objects\time 0 (?C_STARTUP)
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-  C:002EH         SYMBOL        STARTUP1
+  C:01AAH         SYMBOL        STARTUP1
   N:0000H         SYMBOL        XBPSTACK
   N:0000H         SYMBOL        XBPSTACKTOP
   N:0000H         SYMBOL        XDATALEN
   N:0000H         SYMBOL        XDATASTART
   C:0000H         LINE#         126
-  C:002EH         LINE#         133
-  C:0030H         LINE#         134
-  C:0031H         LINE#         135
-  C:0032H         LINE#         136
-  C:0034H         LINE#         185
-  C:0037H         LINE#         196
+  C:01AAH         LINE#         133
+  C:01ACH         LINE#         134
+  C:01ADH         LINE#         135
+  C:01AEH         LINE#         136
+  C:01B0H         LINE#         185
+  C:01B3H         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
   -------         MODULE        TIME_0
@@ -91,41 +103,70 @@ SYMBOL TABLE OF MODULE:  .\Objects\time 0 (?C_STARTUP)
   D:00B0H         PUBLIC        P3
   D:00A8H         PUBLIC        IE
   D:00B8H         PUBLIC        IP
-  C:0003H         PUBLIC        main
+  C:0133H         PUBLIC        _ConfigTime0
+  D:000CH         PUBLIC        T0RH
+  D:000DH         PUBLIC        T0RL
+  C:0194H         PUBLIC        main
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
   B:0088H.5       PUBLIC        TF0
   D:008CH         PUBLIC        TH0
   D:008AH         PUBLIC        TL0
-  B:00A0H.7       PUBLIC        LED
+  B:00A0H.0       PUBLIC        LED
   B:0088H.4       PUBLIC        TR0
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
-  -------         PROC          MAIN
+  -------         PROC          _CONFIGTIME0
+  D:0002H         SYMBOL        ms
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  05/13/2023  00:45:47  PAGE 3
+
+
   -------         DO            
-  D:0006H         SYMBOL        cnt
+  D:0008H         SYMBOL        temp
   -------         ENDDO         
-  C:0003H         LINE#         5
-  C:0003H         LINE#         6
-  C:0006H         LINE#         8
-  C:0009H         LINE#         10
-  C:000CH         LINE#         11
-  C:000FH         LINE#         12
-  C:0011H         LINE#         13
-  C:0011H         LINE#         14
-  C:0014H         LINE#         15
-  C:0016H         LINE#         16
-  C:0019H         LINE#         17
-  C:001CH         LINE#         18
-  C:0021H         LINE#         19
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  05/10/2023  00:30:56  PAGE 3
-
-
-  C:002AH         LINE#         20
-  C:002CH         LINE#         21
+  C:0133H         LINE#         8
+  C:0133H         LINE#         9
+  C:0133H         LINE#         11
+  C:013FH         LINE#         12
+  C:015FH         LINE#         13
+  C:0175H         LINE#         14
+  C:0183H         LINE#         15
+  C:0186H         LINE#         17
+  C:0189H         LINE#         19
+  C:018CH         LINE#         20
+  C:018FH         LINE#         21
+  C:0191H         LINE#         22
+  C:0193H         LINE#         23
+  -------         ENDPROC       _CONFIGTIME0
+  -------         PROC          MAIN
+  C:0194H         LINE#         24
+  C:0194H         LINE#         25
+  C:0194H         LINE#         27
+  C:019BH         LINE#         28
+  C:019BH         LINE#         29
+  C:019BH         LINE#         30
+  C:019EH         LINE#         31
+  C:019EH         LINE#         32
+  C:01A0H         LINE#         33
+  C:01A3H         LINE#         34
+  C:01A6H         LINE#         35
+  C:01A8H         LINE#         36
+  C:01A8H         LINE#         37
   -------         ENDPROC       MAIN
   -------         ENDMOD        TIME_0
 
-Program Size: data=9.0 xdata=0 code=58
+  -------         MODULE        ?C?LMUL
+  C:0003H         PUBLIC        ?C?LMUL
+  -------         ENDMOD        ?C?LMUL
+
+  -------         MODULE        ?C?ULDIV
+  C:008EH         PUBLIC        ?C?ULDIV
+  -------         ENDMOD        ?C?ULDIV
+
+  -------         MODULE        ?C?ULSHR
+  C:0120H         PUBLIC        ?C?ULSHR
+  -------         ENDMOD        ?C?ULSHR
+
+Program Size: data=15.0 xdata=0 code=438
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
