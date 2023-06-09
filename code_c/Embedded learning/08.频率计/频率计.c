@@ -1,7 +1,9 @@
 #include <reg52.h>
 
-
+sbit Wave=P3^3;
 unsigned char T0RH,T0RL;
+unsigned int count=0;
+bit flag1s=0;//标志位，和int char类型一样，只有1和0
 
 
 
@@ -22,18 +24,36 @@ void ConfigTimer0(unsigned char ms)
 	TL0=T0RL;
 	TR0=1;		//启动定时器
 }
+void ConfigINT0(void)
+{
+	IT0=1; //下降沿触发
+	EX0=1;
+	
+}
 
 void main()
 {	
 	EA=1;
-	P1=0X0E;
-	
-	ConfigTimer0(1);	//设定1ms
+	P1=0x0E; //选中8个LED
+	ConfigTimer0(10);	//设定10ms
+	ConfigINT0();
 	
 
 	while(1)
-	{
-
+	{		
+		
+//			if(tmp!=Wave){
+//				count++;
+//				tmp=Wave;//更新状态
+//			}
+//			if(flag1s)
+//			{
+//				//count=1000  =0000 0011 1110 1000
+//			count/=2; 波形上下会计两次
+//				count>>=4;  0000 0000 0011 1110 变成8位可读
+//				P0=(count>>4);
+//				count=0
+//			}
 	}
 }
 
@@ -46,8 +66,15 @@ void InterruptTimer0() interrupt 1
 	TL0=T0RL;
 
 	cnt++;
-	if(cnt>=500)
+	if(cnt>=100)
 	{
 		cnt=0;
+		P0=(count>>4); 
+		count=0;
 	}
+}
+//当出现下降沿的时候单片机自动跳转此中断函数
+void InterruptINT0() interrupt 0
+{
+	count++;
 }
