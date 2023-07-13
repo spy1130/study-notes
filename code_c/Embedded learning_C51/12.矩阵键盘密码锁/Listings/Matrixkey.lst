@@ -1,0 +1,54 @@
+C51 COMPILER V9.60.7.0   MATRIXKEY                                                         06/13/2023 00:16:30 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MATRIXKEY
+OBJECT MODULE PLACED IN .\Objects\Matrixkey.obj
+COMPILER INVOKED BY: E:\Applications\Keil_5\C51\BIN\C51.EXE Matrixkey.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRIN
+                    -T(.\Listings\Matrixkey.lst) TABS(2) OBJECT(.\Objects\Matrixkey.obj)
+
+line level    source
+
+   1          #include "reg52.h"
+   2          #include "Delay.h"
+   3          
+   4          unsigned char Matrixkey()
+   5          {
+   6   1        unsigned char KeyNumber=0;
+   7   1        
+   8   1        P1=0xFF;
+   9   1        P1^3=0;
+*** ERROR C141 IN LINE 9 OF Matrixkey.c: syntax error near '=', expected ';'
+  10   1        if(P1^7==0){Delay(20);while(P1^7==0);Delay(20);KeyNumber=1;}
+  11   1        if(P1^6==0){Delay(20);while(P1^6==0);Delay(20);KeyNumber=5;}
+  12   1        if(P1^5==0){Delay(20);while(P1^5==0);Delay(20);KeyNumber=9;}
+  13   1        if(P1^4==0){Delay(20);while(P1^4==0);Delay(20);KeyNumber=13;}
+  14   1        
+  15   1        P1=0xFF;
+  16   1        P1^2=0;
+*** ERROR C141 IN LINE 16 OF Matrixkey.c: syntax error near '=', expected ';'
+  17   1        if(P1^7==0){Delay(20);while(P1^7==0);Delay(20);KeyNumber=2;}
+  18   1        if(P1^6==0){Delay(20);while(P1^6==0);Delay(20);KeyNumber=6;}
+  19   1        if(P1^5==0){Delay(20);while(P1^5==0);Delay(20);KeyNumber=10;}
+  20   1        if(P1^4==0){Delay(20);while(P1^4==0);Delay(20);KeyNumber=14;}
+  21   1        
+  22   1        P1=0xFF;
+  23   1        P1^1=0;
+*** ERROR C141 IN LINE 23 OF Matrixkey.c: syntax error near '=', expected ';'
+  24   1        if(P1^7==0){Delay(20);while(P1^7==0);Delay(20);KeyNumber=3;}
+  25   1        if(P1^6==0){Delay(20);while(P1^6==0);Delay(20);KeyNumber=7;}
+  26   1        if(P1^5==0){Delay(20);while(P1^5==0);Delay(20);KeyNumber=11;}
+  27   1        if(P1^4==0){Delay(20);while(P1^4==0);Delay(20);KeyNumber=15;}
+  28   1        
+  29   1        P1=0xFF;
+  30   1        P1^0 = 0 ;
+*** ERROR C141 IN LINE 30 OF Matrixkey.c: syntax error near '=', expected ';'
+  31   1        if(P1^7==0){Delay(20);while(P1^7==0);Delay(20);KeyNumber=4;}
+  32   1        if(P1^6==0){Delay(20);while(P1^6==0);Delay(20);KeyNumber=8;}
+  33   1        if(P1^5==0){Delay(20);while(P1^5==0);Delay(20);KeyNumber=12;}
+  34   1        if(P1^4==0){Delay(20);while(P1^4==0);Delay(20);KeyNumber=16;}
+  35   1        
+  36   1        return KeyNumber;
+  37   1      }
+  38            
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  4 ERROR(S)
